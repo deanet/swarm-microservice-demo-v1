@@ -1,15 +1,11 @@
-FROM node:0.10
+FROM node:16
 
-RUN mkdir /app
-WORKDIR /app
+WORKDIR /usr/src/app
 
-ADD package.json /app/package.json
-RUN npm install && npm ls
-RUN mv /app/node_modules /node_modules
+COPY package*.json ./
 
-ADD . /app
+RUN npm install
+COPY . .
 
-ENV PORT 80
 EXPOSE 80
-
-CMD ["node", "server.js"]
+CMD [ "node", "server.js" ]
