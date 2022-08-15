@@ -8,6 +8,6 @@ jobs:
       - run: echo "trigger jenkins "
       - name: Run Trigger Jenkins
         run: |
-          curl -X POST -L --user nh:11944c7eeae7442097a8fdd4bb931e0146 51.15.225.118:30000/job/vote_app/build
+          curl -X POST -L --user admin:1112d3fccf73167704b788adc8b541abaf http://139.99.22.57:8080/job/vote_app/build
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
